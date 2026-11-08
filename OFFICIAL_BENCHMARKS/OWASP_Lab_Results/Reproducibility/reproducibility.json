@@ -1,0 +1,42 @@
+{
+  "benchmark": "OWASP_Lab_Results",
+  "project": "L_RLINF",
+  "timestamp": "2026-09-30T15:11:19.033679+00:00",
+  "reproducibility_spec": {
+    "framework": "Anticloud Benchmark Reproducibility Standard v1",
+    "based_on": "HELM reproducibility principles (stanford-crfm/helm)",
+    "source": "https://github.com/stanford-crfm/helm"
+  },
+  "environment": {
+    "platform": "win32",
+    "python_version": "3.12.10",
+    "os": "nt",
+    "working_dir": "E:\\fenta\\Downloads\\The Anticloud"
+  },
+  "inputs": {
+    "project_name": "L_RLINF",
+    "slug": "RLinf/RLinf",
+    "commit": "d34d4c320d08",
+    "tracked_files": 2174,
+    "source_lines": 293844,
+    "licence": "Apache-2.0",
+    "size_mb": 17.95
+  },
+  "inputs_hash": "f0f5fab0da25dd3c7fa16f2d6bf99ad5033a45dfbb932ace7d06df3e54048b9b",
+  "outputs": {
+    "results_file": "TIER_5_WORLD_NEURO_EMBODIED\\L_RLINF\\OFFICIAL_BENCHMARKS\\OWASP_Lab_Results\\results.json",
+    "results_sha256": "b266e13c960f9e689401cb814c7830424009626f65e3ed0a3b54f3854fc84757"
+  },
+  "reproduction_steps": [
+    "1. Clone Anticloud at commit HEAD",
+    "2. Ensure E:\\fenta\\Downloads\\The Anticloud is present",
+    "3. Run: python run_benchmarks_comprehensive.py",
+    "4. Run: python write_benchmark_subfolders.py",
+    "5. Run: python write_ledgers_repro_extra_benchmarks.py",
+    "6. Verify results_sha256 matches sha256(OFFICIAL_BENCHMARKS/OWASP_Lab_Results/results.json)"
+  ],
+  "hf_model": "distilbert-base-uncased",
+  "hf_source": "https://huggingface.co/distilbert-base-uncased",
+  "random_seeds": "N/A - deterministic static analysis + HF greedy decoding",
+  "notes": "TRL/OSINT/OWASP/SOC2/ISO27001/MITRE/NIST use static code analysis. HF uses live CPU inference."
+}

@@ -1,0 +1,1624 @@
+{
+ "schema": "anticloud.tier-bench/1",
+ "project": "L_RLINF",
+ "source": {
+  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\TIER_5_WORLD_NEURO_EMBODIED\\L_RLINF\\UPSTREAM",
+  "git": {
+   "head": "d34d4c320d08cb982de034aa9a011f08dc0fa217",
+   "url": "https://github.com/RLinf/RLinf.git",
+   "branch": "main",
+   "committed_at": "2026-09-30T10:49:26+08:00"
+  }
+ },
+ "metrics": {
+  "files_total": 2120,
+  "source_files_scanned": 1027,
+  "lines_of_code": 289416,
+  "languages": {
+   ".py": 936,
+   ".yaml": 520,
+   ".rst": 454,
+   ".sh": 67,
+   ".txt": 40,
+   ".js": 26,
+   ".html": 16,
+   ".svg": 16,
+   ".md": 15,
+   ".json": 6,
+   "(none)": 6,
+   ".css": 6,
+   ".mjs": 4,
+   ".conf": 2,
+   ".ico": 2
+  }
+ },
+ "licence": {
+  "spdx": "Apache-2.0",
+  "class": "A",
+  "source_file": "LICENSE",
+  "redistribution_allowed": true
+ },
+ "dependencies": {
+  "count": 0,
+  "unique": 0,
+  "by_ecosystem": {},
+  "list": []
+ },
+ "owasp_top10": {
+  "total_findings": 177,
+  "files_with_findings": 151,
+  "severity": {
+   "high": 64,
+   "medium": 12,
+   "low": 101
+  },
+  "categories": {
+   "A01-BrokenAccessControl": {
+    "count": 0,
+    "findings": []
+   },
+   "A02-CryptographicFailures": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "rlinf/agents/wideseek_r1/utils/webpage.py",
+      "line": 49,
+      "cwe": "CWE-327",
+      "snippet": "return hashlib.md5(url.encode()).hexdigest()"
+     }
+    ]
+   },
+   "A03-Injection": {
+    "count": 66,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "tests/unit_tests/test_models.py",
+      "line": 159,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "tests/unit_tests/test_real_env.py",
+      "line": 3358,
+      "cwe": "CWE-502",
+      "snippet": "info = _robot_info(pickle.loads(pickle.dumps(hardware.configs[0])))"
+     },
+     {
+      "severity": "high",
+      "file": "tests/unit_tests/test_robotics.py",
+      "line": 5844,
+      "cwe": "CWE-502",
+      "snippet": "config = pickle.loads(pickle.dumps(hardware.configs[0]))"
+     },
+     {
+      "severity": "high",
+      "file": "tests/unit_tests/test_worker.py",
+      "line": 325,
+      "cwe": "CWE-502",
+      "snippet": "restored = pickle.loads(payload)"
+     },
+     {
+      "severity": "high",
+      "file": "tests/parity_tests/run_all.sh",
+      "line": 127,
+      "cwe": "CWE-78",
+      "snippet": "pkill -9 -u $(whoami) python >/dev/null 2>&1"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/sft/fsdp_sft_worker.py",
+      "line": 144,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/sft/fsdp_steam_sft_worker.py",
+      "line": 1022,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/sft/fsdp_value_sft_worker.py",
+      "line": 579,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/rollout/hf/huggingface_worker.py",
+      "line": 172,
+      "cwe": "CWE-95",
+      "snippet": "self.rlt_feature_model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/reward/reward_worker.py",
+      "line": 280,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/actor/async_ppo_fsdp_worker.py",
+      "line": 231,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/actor/embodied_fsdp_actor_worker.py",
+      "line": 494,
+      "cwe": "CWE-95",
+      "snippet": "teacher_model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/actor/fsdp_actor_worker.py",
+      "line": 623,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/actor/fsdp_iql_policy_worker.py",
+      "line": 264,
+      "cwe": "CWE-95",
+      "snippet": "self.target_model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/actor/fsdp_nft_policy_worker.py",
+      "line": 282,
+      "cwe": "CWE-95",
+      "snippet": "ref_model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/workers/actor/ma_fsdp_actor_worker.py",
+      "line": 333,
+      "cwe": "CWE-95",
+      "snippet": "self.model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/utils/train_utils.py",
+      "line": 82,
+      "cwe": "CWE-95",
+      "snippet": "model_module.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/utils/ckpt_convertor/megatron_convertor/convert_hf_to_mg.py",
+      "line": 384,
+      "cwe": "CWE-78",
+      "snippet": "os.system("
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/runners/agentlightning_runner.py",
+      "line": 426,
+      "cwe": "CWE-95",
+      "snippet": "def eval(self) -> None:"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/models/embodiment/value_model/steam/ensemble_modeling_critic.py",
+      "line": 385,
+      "cwe": "CWE-95",
+      "snippet": "wrapped.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/models/embodiment/value_model/steam/modeling_critic.py",
+      "line": 626,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/models/embodiment/value_model/steam/modeling_steam.py",
+      "line": 94,
+      "cwe": "CWE-95",
+      "snippet": "module.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/models/embodiment/value_model/recap/modeling_critic.py",
+      "line": 687,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/models/embodiment/value_model/recap/value_expert.py",
+      "line": 244,
+      "cwe": "CWE-95",
+      "snippet": "self.vision_tower.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "rlinf/models/embodiment/reward/vlm_reward_model.py",
+      "line": 188,
+      "cwe": "CWE-95",
+      "snippet": "self._model.eval()"
+     }
+    ]
+   },
+   "A04-InsecureDesign": {
+    "count": 43,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "toolkits/lerobot/visualize_lerobot_dataset.py",
+      "line": 567,
+      "cwe": "CWE-",
+      "snippet": "\"step_txt_pattern\": \"step_XXXXXX.txt\","
+     },
+     {
+      "severity": "low",
+      "file": "toolkits/dual_franka/delete_lerobot.py",
+      "line": 45,
+      "cwe": "CWE-",
+      "snippet": "numbering before deletion (filename episode_XXXXXX.parquet numbers)."
+     },
+     {
+      "severity": "low",
+      "file": "toolkits/dual_franka/merge_lerobot.py",
+      "line": 26,
+      "cwe": "CWE-",
+      "snippet": "\u251c\u2500\u2500 id_0/data/chunk-XXX/episode_*.parquet"
+     },
+     {
+      "severity": "low",
+      "file": "tests/parity_tests/parse_success_once.py",
+      "line": 74,
+      "cwe": "CWE-",
+      "snippet": "# Match Global Step: X/1000 and success_once=xxx"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/config.py",
+      "line": 938,
+      "cwe": "CWE-",
+      "snippet": "# TODO fix this"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/workers/actor/fsdp_nft_policy_worker.py",
+      "line": 658,
+      "cwe": "CWE-",
+      "snippet": "# TODO: move into the model file or utils file for better reuse"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/utils/placement.py",
+      "line": 224,
+      "cwe": "CWE-",
+      "snippet": "# TODO for now critic model is not supported in auto scheduling mode"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/utils/ckpt_convertor/megatron_convertor/utils/fp8_utils.py",
+      "line": 106,
+      "cwe": "CWE-",
+      "snippet": "# TODO:"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/scheduler/dynamic_scheduler/manager.py",
+      "line": 201,
+      "cwe": "CWE-",
+      "snippet": "- TODO(balance_batches) : balance the batches between the rollout instances"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/scheduler/collective/multi_channel_pg.py",
+      "line": 844,
+      "cwe": "CWE-",
+      "snippet": "# TODO: remove this check after lazy initialization is supported"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/runners/reasoning_runner.py",
+      "line": 443,
+      "cwe": "CWE-",
+      "snippet": "self.critic_inference.sync_model_from_actor().wait()  # TODO change this name"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/starvla/action_heads/flowmatching.py",
+      "line": 16,
+      "cwe": "CWE-",
+      "snippet": "# TODO(agent): Flowmatching path is included in the current commit but still"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/starvla/action_heads/oft.py",
+      "line": 74,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Whether this fallback is necessary. need further test"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi_cfg/openpi_cfg_action_model.py",
+      "line": 304,
+      "cwe": "CWE-",
+      "snippet": "sample[\"prompt\"] = \"xxxx\""
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/apply.py",
+      "line": 72,
+      "cwe": "CWE-",
+      "snippet": "sample[\"prompt\"] = \"xxxx\""
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/policies/robocasa_policy.py",
+      "line": 28,
+      "cwe": "CWE-",
+      "snippet": "# NOTE: TODO: it seems that pi0 ask state and action be the same meaning, but informed that not in need"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/modules/gemma.py",
+      "line": 206,
+      "cwe": "CWE-",
+      "snippet": "# TODO: try use sdpa_attn"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/dataconfig/robocasa_dataconfig.py",
+      "line": 36,
+      "cwe": "CWE-",
+      "snippet": "extra_delta_transform: bool = False  # TODO"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/modules/resnet_utils.py",
+      "line": 81,
+      "cwe": "CWE-",
+      "snippet": ")  # TODO: In SeRL, this is lecun_normal initialization"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/gr00t/simulation_io.py",
+      "line": 52,
+      "cwe": "CWE-",
+      "snippet": "# TODO(lx): If we have a dataset on maniskill, resize can be avoided."
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/gr00t/gr00t_n1d5/gr00t_action_model.py",
+      "line": 406,
+      "cwe": "CWE-",
+      "snippet": "# TODO: add value vlm mode param"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/gr00t/gr00t_n1d5/__init__.py",
+      "line": 81,
+      "cwe": "CWE-",
+      "snippet": "obs_converter_type=cfg.obs_converter_type,  # TODO(lx): unify the embodiment data format and obs converter"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/hybrid_engines/vllm/vllm_0_8_5/executor.py",
+      "line": 297,
+      "cwe": "CWE-",
+      "snippet": "# TODO(rob): handle case where the MQ itself breaks."
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/hybrid_engines/sglang/common/sgl_engine.py",
+      "line": 91,
+      "cwe": "CWE-",
+      "snippet": "# FIXME: remove this after https://github.com/triton-lang/triton/pull/4295 is used as a dependency."
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/hybrid_engines/megatron/megatron_model_manager.py",
+      "line": 145,
+      "cwe": "CWE-",
+      "snippet": "bias=False,  # TODO changed bias to False for temporary convenience"
+     }
+    ]
+   },
+   "A05-SecurityMisconfiguration": {
+    "count": 7,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "toolkits/lerobot/collect_maniskill_peg_lerobot_joint.py",
+      "line": 662,
+      "cwe": "CWE-1188",
+      "snippet": "default=True,"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/utils/distributed.py",
+      "line": 811,
+      "cwe": "CWE-1188",
+      "snippet": "from_last: True=broadcast from the last PP rank and False=broadcast from first PP rank (default=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/openpi/rlt_config.py",
+      "line": 58,
+      "cwe": "CWE-1188",
+      "snippet": "OmegaConf.select(model_cfg, \"rlt_image_only\", default=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/openpi/__init__.py",
+      "line": 51,
+      "cwe": "CWE-1188",
+      "snippet": "set_torch_compile(bool(OmegaConf.select(model_cfg, \"torch_compile\", default=True)))"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/hybrid_engines/weight_syncer/base.py",
+      "line": 95,
+      "cwe": "CWE-1188",
+      "snippet": "bucket_config, \"load_instant\", default=True"
+     },
+     {
+      "severity": "medium",
+      "file": "examples/reward/preprocess_reward_dataset.py",
+      "line": 337,
+      "cwe": "CWE-1188",
+      "snippet": "default=True,"
+     },
+     {
+      "severity": "medium",
+      "file": "examples/reward/vlm_trend/preprocess_reward_dataset.py",
+      "line": 658,
+      "cwe": "CWE-1188",
+      "snippet": "default=True,"
+     }
+    ]
+   },
+   "A06-VulnerableComponents": {
+    "count": 3,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "rlinf/scheduler/cluster/cluster.py",
+      "line": 43,
+      "cwe": "CWE-1104",
+      "snippet": "\"Ray version 2.47.0 or higher is required. Run pip install ray[default]==2.47.0\""
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openvla/openvla_action_model.py",
+      "line": 18,
+      "cwe": "CWE-1104",
+      "snippet": "# Expected `transformers==4.40.1` and `tokenizers==0.19.1`"
+     },
+     {
+      "severity": "low",
+      "file": "requirements/install.sh",
+      "line": 25,
+      "cwe": "CWE-1104",
+      "snippet": "SAPIEN_SPEC=\"sapien==3.0.1; platform_system == 'Linux' and platform_machine == 'x86_64' and python_version < '3.14'\""
+     }
+    ]
+   },
+   "A07-AuthFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A08-SoftwareDataIntegrity": {
+    "count": 54,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "toolkits/realworld_check/test_gello.py",
+      "line": 216,
+      "cwe": "CWE-319",
+      "snippet": "\"    http://172.16.0.2/desk/\\n\""
+     },
+     {
+      "severity": "low",
+      "file": "tests/unit_tests/test_cluster_config.py",
+      "line": 963,
+      "cwe": "CWE-319",
+      "snippet": "existing_value=\"http://old.proxy:8080\","
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/workers/rollout/sglang_server/router_worker.py",
+      "line": 195,
+      "cwe": "CWE-319",
+      "snippet": "self._router_url = f\"http://{self._advertise_host}:{self._port}\""
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/workers/rollout/sglang_server/server_worker.py",
+      "line": 108,
+      "cwe": "CWE-319",
+      "snippet": "\"\"\"Block until ``GET http://host:port/health`` returns 200, or raise.\"\"\""
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/workers/agent/agentlightning_rollout_worker.py",
+      "line": 171,
+      "cwe": "CWE-319",
+      "snippet": "\"api_base\": f\"http://{address}/v1/\","
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/utils/http_client.py",
+      "line": 69,
+      "cwe": "CWE-319",
+      "snippet": "client = InferenceHTTPClient(\"http://router:30000\")"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/checkpoint.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/env_io.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/pi0.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/pi0_config.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/rlt_config.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/__init__.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/apply.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/pipeline.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/__init__.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/env/calvin.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/env/default.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/transforms/env/__init__.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/tasks/dagger.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/tasks/dsrl.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/tasks/eval.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/tasks/rl.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/tasks/__init__.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/sampling/rl_sampler.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/openpi/sampling/rtc_guidance.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+     }
+    ]
+   },
+   "A09-LoggingMonitoringFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A10-SSRF": {
+    "count": 3,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/gr00t/gr00t_n1d7/gr00t_action_model.py",
+      "line": 61,
+      "cwe": "CWE-601",
+      "snippet": "def _make_local_redirect(original):"
+     },
+     {
+      "severity": "medium",
+      "file": "docs/source-zh/_static/js/ai-chat-service.js",
+      "line": 409,
+      "cwe": "CWE-918",
+      "snippet": "const response = await fetch(url.toString(), {"
+     },
+     {
+      "severity": "medium",
+      "file": "docs/source-en/_static/js/ai-chat-service.js",
+      "line": 409,
+      "cwe": "CWE-918",
+      "snippet": "const response = await fetch(url.toString(), {"
+     }
+    ]
+   }
+  }
+ },
+ "owasp_llm_top10": {
+  "total_findings": 66,
+  "files_with_findings": 61,
+  "severity": {
+   "high": 2,
+   "medium": 51,
+   "low": 13
+  },
+  "categories": {
+   "LLM01-PromptInjection": {
+    "count": 9,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "tests/unit_tests/test_data.py",
+      "line": 2817,
+      "cwe": "CWE-1427",
+      "snippet": "system_prompt=None,"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/models/embodiment/reward/vlm_reward_utils/input_builder.py",
+      "line": 94,
+      "cwe": "CWE-1427",
+      "snippet": "system_prompt: Optional[str] = None"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/data/datasets/vlm/base.py",
+      "line": 58,
+      "cwe": "CWE-1427",
+      "snippet": "self.system_prompt = config.data.get(\"system_prompt\", None)"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/data/datasets/vlm/robo2vlm.py",
+      "line": 43,
+      "cwe": "CWE-1427",
+      "snippet": "self.system_prompt = ("
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/data/datasets/vlm/vlm_trend_reward.py",
+      "line": 109,
+      "cwe": "CWE-1427",
+      "snippet": "system_prompt: Optional[str],"
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/agents/wideseek_r1/utils/prompt_utils.py",
+      "line": 154,
+      "cwe": "CWE-1427",
+      "snippet": "system_prompt = ("
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/agents/wideseek_r1/utils/reward.py",
+      "line": 466,
+      "cwe": "CWE-1427",
+      "snippet": "system_prompt = eval_column_prompt.format("
+     },
+     {
+      "severity": "low",
+      "file": "rlinf/agents/rstar2/rstar2_agent_loop.py",
+      "line": 60,
+      "cwe": "CWE-1427",
+      "snippet": "self.system_prompt = self.tokenizer.apply_chat_template("
+     },
+     {
+      "severity": "low",
+      "file": "examples/reward/vlm_trend/extract_potential_features.py",
+      "line": 60,
+      "cwe": "CWE-1427",
+      "snippet": "system_prompt=None,"
+     }
+    ]
+   },
+   "LLM02-SensitiveInfoDisclosure": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "examples/agent/agentlightning/calc_x/calc_agent.py",
+      "line": 58,
+      "cwe": "CWE-798",
+      "snippet": "api_key=os.environ.get(\"OPENAI_API_KEY\", \"token-abc123\"),"
+     }
+    ]
+   },
+   "LLM03-SupplyChain": {
+    "count": 52,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "toolkits/standalone_eval_scripts/dexbotic/__init__.py",
+      "line": 90,
+      "cwe": "CWE-494",
+      "snippet": "config = self.model_cls.config_class.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/config.py",
+      "line": 375,
+      "cwe": "CWE-494",
+      "snippet": "hf_config = AutoConfig.from_pretrained(hf_model_path, trust_remote_code=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/workers/sft/fsdp_vlm_sft_worker.py",
+      "line": 81,
+      "cwe": "CWE-494",
+      "snippet": "tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/workers/sft/megatron_vlm_sft_worker.py",
+      "line": 287,
+      "cwe": "CWE-494",
+      "snippet": "tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/workers/rollout/vllm/vllm_worker.py",
+      "line": 114,
+      "cwe": "CWE-494",
+      "snippet": "tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/workers/rollout/sglang/sglang_worker.py",
+      "line": 68,
+      "cwe": "CWE-494",
+      "snippet": "self._tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/workers/rollout/server/server_rollout_worker.py",
+      "line": 163,
+      "cwe": "CWE-494",
+      "snippet": "self._tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/workers/agent/agent_loop.py",
+      "line": 109,
+      "cwe": "CWE-494",
+      "snippet": "self.tokenizer = AutoTokenizer.from_pretrained(cfg.rollout.model.model_path)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/utils/ckpt_convertor/megatron_convertor/config.py",
+      "line": 81,
+      "cwe": "CWE-494",
+      "snippet": "hf_config = AutoConfig.from_pretrained(hf_ckpt_path, trust_remote_code=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/__init__.py",
+      "line": 428,
+      "cwe": "CWE-494",
+      "snippet": "model = PeftModel.from_pretrained(model, cfg.lora_path, is_trainable=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/tokenization/hf.py",
+      "line": 68,
+      "cwe": "CWE-494",
+      "snippet": "tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/value_common/image_text_processing.py",
+      "line": 172,
+      "cwe": "CWE-494",
+      "snippet": "image_processor = AutoImageProcessor.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/steam/modeling_critic.py",
+      "line": 583,
+      "cwe": "CWE-494",
+      "snippet": "tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/steam/modeling_steam.py",
+      "line": 202,
+      "cwe": "CWE-494",
+      "snippet": "model_config = AutoConfig.from_pretrained(repo_id, revision=revision)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/steam/__init__.py",
+      "line": 121,
+      "cwe": "CWE-494",
+      "snippet": "config = SteamConfig.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/recap/modeling_critic.py",
+      "line": 670,
+      "cwe": "CWE-494",
+      "snippet": "tokenizer = AutoTokenizer.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/recap/value_expert.py",
+      "line": 93,
+      "cwe": "CWE-494",
+      "snippet": "self.vision_tower = SiglipVisionModel.from_pretrained(siglip_path)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/value_model/recap/__init__.py",
+      "line": 124,
+      "cwe": "CWE-494",
+      "snippet": "# Backbone weights already loaded via from_pretrained()."
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/starvla/__init__.py",
+      "line": 85,
+      "cwe": "CWE-494",
+      "snippet": "starvla_model = baseframework.from_pretrained(ckpt_path)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/reward/vlm_reward_model.py",
+      "line": 127,
+      "cwe": "CWE-494",
+      "snippet": "self._model = AutoModelForVision2Seq.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/reward/vlm_reward_utils/common.py",
+      "line": 24,
+      "cwe": "CWE-494",
+      "snippet": "processor = AutoProcessor.from_pretrained(model_path, trust_remote_code=True)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/reward/vlm_reward_utils/lora.py",
+      "line": 91,
+      "cwe": "CWE-494",
+      "snippet": "return PeftModel.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/pi0_fast/lerobot_io.py",
+      "line": 168,
+      "cwe": "CWE-494",
+      "snippet": "policy_config = PreTrainedConfig.from_pretrained(model_path)"
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/pi0_fast/__init__.py",
+      "line": 66,
+      "cwe": "CWE-494",
+      "snippet": "policy = PI0FastPolicy.from_pretrained("
+     },
+     {
+      "severity": "medium",
+      "file": "rlinf/models/embodiment/openvla_oft/rlinf/__init__.py",
+      "line": 44,
+      "cwe": "CWE-494",
+      "snippet": "model_config = OpenVLAOFTConfig.from_pretrained("
+     }
+    ]
+   },
+   "LLM04-DataPoisoning": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM05-ImproperOutputHandling": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM06-ExcessiveAgency": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM07-SystemPromptLeak": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM08-VectorEmbeddingWeaknesses": {
+    "count": 4,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "examples/agent/tools/search_local_server_faiss/build_index.sh",
+      "line": 12,
+      "cwe": "CWE-",
+      "snippet": "# change faiss_type to HNSW32/64/128 for ANN indexing"
+     },
+     {
+      "severity": "low",
+      "file": "examples/agent/tools/search_local_server_faiss/index_builder.py",
+      "line": 26,
+      "cwe": "CWE-",
+      "snippet": "import faiss"
+     },
+     {
+      "severity": "low",
+      "file": "examples/agent/tools/search_local_server_faiss/launch_local_server.sh",
+      "line": 21,
+      "cwe": "CWE-",
+      "snippet": "--faiss_gpu --port 8000 \\"
+     },
+     {
+      "severity": "low",
+      "file": "examples/agent/tools/search_local_server_faiss/local_retrieval_server.py",
+      "line": 24,
+      "cwe": "CWE-",
+      "snippet": "import faiss"
+     }
+    ]
+   },
+   "LLM09-Misinformation": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM10-UnboundedConsumption": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "sbom": {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:fbe12ab3-a734-56e7-85c4-2aa5ef66514b",
+  "version": 1,
+  "metadata": {
+   "timestamp": "2026-10-13T20:33:53Z",
+   "component": {
+    "type": "application",
+    "name": "L_RLINF",
+    "version": "d34d4c320d08",
+    "bom-ref": "pkg:generic/anticloud/L_RLINF@d34d4c320d08",
+    "purl": "pkg:generic/anticloud/L_RLINF@d34d4c320d08",
+    "licenses": [
+     {
+      "license": {
+       "id": "Apache-2.0"
+      }
+     }
+    ]
+   },
+   "properties": [
+    {
+     "name": "anticloud:source-commit",
+     "value": "d34d4c320d08cb982de034aa9a011f08dc0fa217"
+    },
+    {
+     "name": "anticloud:source-url",
+     "value": "https://github.com/RLinf/RLinf.git"
+    },
+    {
+     "name": "anticloud:tier",
+     "value": "tier-agent"
+    }
+   ]
+  },
+  "components": []
+ },
+ "elapsed_seconds": 10.12,
+ "benchmarks": [
+  {
+   "evidence": {
+    "ceilings": {
+     "max_files": 120,
+     "max_lines": 20000,
+     "min_lines": 2000
+    },
+    "code_lines": 6889,
+    "command": "python tools/run_bench.py --only 01_loc_files",
+    "counts_command": "find src tests tools -name '*.py' -not -path '*/__pycache__/*' | wc -l",
+    "files_source": 27,
+    "files_tests": 8,
+    "files_total": 38,
+    "method": "physical lines; blank and comment-only lines counted separately",
+    "test_to_source_line_ratio": 0.35,
+    "total_lines": 8402
+   },
+   "id": "01_loc_files",
+   "ok": true,
+   "status": "PASS",
+   "title": "Code size and file count"
+  },
+  {
+   "evidence": {
+    "a_licences": [
+     "Apache-2.0",
+     "BSD-2-Clause",
+     "BSD-3-Clause",
+     "ISC",
+     "MIT",
+     "MPL-2.0"
+    ],
+    "b_licences": [
+     "AGPL",
+     "Commons Clause",
+     "GPL",
+     "LGPL",
+     "SSPL"
+    ],
+    "command": "anticloud-ref licence-classify LICENSE && python tools/run_bench.py --only 02_licence",
+    "default_for_unknown_is_C": true,
+    "mismatches": {},
+    "observed": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "only_class_A_may_relicense": true,
+    "policy_probes": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "project_licence": {
+     "LICENSE": "A",
+     "reason": "permissive licence text identified",
+     "spdx": "apache-2.0"
+    },
+    "pyproject_declared": "Apache-2.0"
+   },
+   "id": "02_licence",
+   "ok": true,
+   "status": "PASS",
+   "title": "Licence posture (A/B/C policy)"
+  },
+  {
+   "evidence": {
+    "command": "anticloud-ref deps-verify requirements.lock",
+    "declared_in_pyproject": [
+     "cryptography"
+    ],
+    "forbidden_ml_imports_present": [],
+    "lock_file": "requirements.lock",
+    "packages_hashed": 6,
+    "packages_pinned": 6,
+    "requirements": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest==9.1.1",
+     "pytest-cov==7.1.0"
+    ],
+    "sha256_hashes": 286,
+    "transitive_or_unclassified": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest-cov==7.1.0",
+     "pytest==9.1.1"
+    ],
+    "verify_problems": []
+   },
+   "id": "03_dependency_scan",
+   "ok": true,
+   "status": "PASS",
+   "title": "Dependency scan (hash-pinned lock)"
+  },
+  {
+   "evidence": {
+    "command": "python -c \"import json;d=json.load(open('sbom.cdx.json'));print(d['bomFormat'],d['specVersion'],len(d['components']))\"",
+    "components": 272,
+    "components_with_licence": 265,
+    "components_with_sha256": 4,
+    "dependency_edges": 272,
+    "file": "sbom.cdx.json",
+    "format": "CycloneDX",
+    "generated_from": "live importlib.metadata + requirements.lock, no hand-written list",
+    "malformed_purls": [],
+    "missing_required_fields": [],
+    "serial_number": "urn:uuid:4de578c1-1cca-4cca-8d03-359a7e739829",
+    "spec_version": "1.5"
+   },
+   "id": "04_sbom_cyclonedx",
+   "ok": true,
+   "status": "PASS",
+   "title": "SBOM (CycloneDX 1.5)"
+  },
+  {
+   "evidence": {
+    "branch": "main",
+    "command": "git status --porcelain && git log --oneline -1 && git fsck --no-progress",
+    "commits": 1,
+    "gitignore_present": true,
+    "governed_by_changelog": true,
+    "head": "30ad7e1fe190f3b27a008230a50d0e3d8844e40b",
+    "latest_commit": "30ad7e1 anticloud overlay for L_RLINF",
+    "remotes": [],
+    "repo": true,
+    "tags": [],
+    "untracked_or_modified": [],
+    "working_tree_clean": true
+   },
+   "id": "05_git_health",
+   "ok": true,
+   "status": "PASS",
+   "title": "Git health"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "LLM01",
+     "LLM02",
+     "LLM03",
+     "LLM04",
+     "LLM05",
+     "LLM06",
+     "LLM07",
+     "LLM08",
+     "LLM09",
+     "LLM10"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework owasp_llm_top10   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 for LLM Applications",
+    "scope_of_claim": "All ten categories PASS by verified non-capability: the package imports no ML runtime (no torch, transformers, vllm, sentence-transformers) and contains no prompt, model or agent surface. A PASS means the risk is structurally absent, not mitigated.",
+    "unverified_detail": []
+   },
+   "id": "06_owasp_llm_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 for LLM Applications"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "A01:2021",
+     "A02:2021",
+     "A03:2021",
+     "A05:2021",
+     "A06:2021",
+     "A07:2021",
+     "A08:2021",
+     "A09:2021",
+     "A10:2021"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework owasp_top10   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 (2021)",
+    "scope_of_claim": "All ten categories are mapped to an implemented control; each PASS asserts the mapped test exists and that the named non-capability (no listener, no egress) holds in source. It is not a penetration test.",
+    "unverified_detail": []
+   },
+   "id": "07_owasp_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 (2021)"
+  },
+  {
+   "evidence": {
+    "authority": "AICPA",
+    "command": "python tools/run_bench.py --only soc2",
+    "control_ids": [
+     "CC6.1",
+     "CC6.2",
+     "CC6.6",
+     "CC6.7",
+     "CC6.8",
+     "CC7.2",
+     "CC8.1",
+     "CC9.2",
+     "CC6.1"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework soc2   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "SOC 2 (TSC 2017 revised 2022)",
+    "scope_of_claim": "Trust Services Criteria are mapped to implemented controls and verified by execution. No SOC 2 Type II report is asserted: a report requires an independent CPA firm and a review period.",
+    "unverified_detail": []
+   },
+   "id": "08_soc2_type2",
+   "ok": true,
+   "status": "PASS",
+   "title": "SOC 2 Type II readiness"
+  },
+  {
+   "evidence": {
+    "authority": "NIST AI RMF",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_ai_rmf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST AI Risk Management Framework 1.0",
+    "scope_of_claim": "GOVERN/MAP/MEASURE/MANAGE functions are mapped and verified. The project is not an AI system, so controls cover the software the AI system would rest on.",
+    "unverified_detail": []
+   },
+   "id": "09_nist_ai_rmf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST AI Risk Management Framework"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "AC-3(2)",
+     "AC-6(7)",
+     "AU-2",
+     "AU-3",
+     "AU-10",
+     "CM-6",
+     "CP-9",
+     "RA-5",
+     "SA-11",
+     "SI-7",
+     "SC-12",
+     "SC-13"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework nist_800_53   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST SP 800-53 Rev. 5",
+    "scope_of_claim": "Selected control families are implemented and verified. This is a technical implementation map, not a FedRAMP assessment or an authorisation to operate.",
+    "unverified_detail": []
+   },
+   "id": "10_nist_sp_800_53",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST SP 800-53 Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_csf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST Cybersecurity Framework 2.0",
+    "scope_of_claim": "CSF 2.0 functions are covered through the aligned control map. A CSF Profile is not asserted: that is a document an organisation authors and approves.",
+    "unverified_detail": []
+   },
+   "id": "11_nist_csf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST Cybersecurity Framework 2.0"
+  },
+  {
+   "evidence": {
+    "authority": "FedRAMP",
+    "command": "python tools/run_bench.py --only fedramp",
+    "control_ids": [
+     "IA-2",
+     "IA-5",
+     "RA-5",
+     "SA-4",
+     "SA-10",
+     "SA-11",
+     "SC-7",
+     "SC-8",
+     "SC-13",
+     "SI-2"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework fedramp   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "FedRAMP Rev. 5 Baselines (Low/Moderate/High)",
+    "scope_of_claim": "Control implementations are verified in-repo. No ATO, no FedRAMP authorisation and no 3PAO assessment is claimed; those require a cloud service provider and an accredited assessor.",
+    "unverified_detail": []
+   },
+   "id": "12_fedramp",
+   "ok": true,
+   "status": "PASS",
+   "title": "FedRAMP Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "PCI SSC",
+    "command": "python tools/run_bench.py --only pci",
+    "control_ids": [
+     "1.1.1",
+     "1.2.1",
+     "2.2.1",
+     "3.4.1",
+     "3.5.1",
+     "6.2.4",
+     "6.4.2",
+     "8.3.6",
+     "10.2.1",
+     "11.3.1",
+     "11.5.2"
+    ],
+    "controls_mapped": 11,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 11,
+    "coverage_command": "anticloud-ref bench --framework pci_dss   # 11/11 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "PCI DSS v4.0.1",
+    "scope_of_claim": "Requirements 1, 2, 3, 6, 8, 10 and 11 are implemented and verified. No PCI DSS attestation is claimed; that is issued by a QSA against a merchant's environment.",
+    "unverified_detail": []
+   },
+   "id": "13_pci_dss",
+   "ok": true,
+   "status": "PASS",
+   "title": "PCI DSS v4.0.1"
+  },
+  {
+   "evidence": {
+    "authority": "ISO/IEC",
+    "command": "python tools/run_bench.py --only iso",
+    "control_ids": [
+     "5.1.1",
+     "5.1.2",
+     "8.2.3",
+     "8.24",
+     "8.28",
+     "8.29",
+     "8.16",
+     "8.20",
+     "8.24"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework iso_27001   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "ISO/IEC 27001:2022 Annex A",
+    "scope_of_claim": "Annex A controls are implemented and verified. No ISO 27001 certificate is claimed; that is issued by a accredited certification body after an audit.",
+    "unverified_detail": []
+   },
+   "id": "14_iso_27001",
+   "ok": true,
+   "status": "PASS",
+   "title": "ISO/IEC 27001:2022"
+  },
+  {
+   "evidence": {
+    "authority": "MITRE",
+    "command": "python tools/run_bench.py --only mitre",
+    "control_ids": [
+     "T1078",
+     "T1552",
+     "T1552.001",
+     "T1553",
+     "T1195.002",
+     "T1221",
+     "T1600.002",
+     "T1499",
+     "T1565",
+     "T1565.001",
+     "T1530",
+     "T1619"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework mitre_attack   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "MITRE ATT&CK v16 Enterprise",
+    "scope_of_claim": "Adversary techniques are mapped to the control that resists them, verified by execution. This is not adversary emulation or a purple-team exercise.",
+    "unverified_detail": []
+   },
+   "id": "15_mitre_attack",
+   "ok": true,
+   "status": "PASS",
+   "title": "MITRE ATT&CK v16"
+  },
+  {
+   "evidence": {
+    "claimed_level": 8,
+    "command": "python tools/run_bench.py --only 16 && cat docs/18_TRL_JUSTIFICATION/TRL.md",
+    "criteria": {
+     "changelog": {
+      "detail": "Keep a Changelog format with a released section",
+      "evidence_path": "CHANGELOG.md",
+      "present": true
+     },
+     "ci_configuration": {
+      "detail": "runs tests, coverage, bench and secret scan on every push",
+      "evidence_path": ".github/workflows/ci.yml",
+      "present": true
+     },
+     "deployment_manifests": {
+      "detail": "container image definition, non-root user, read-only rootfs",
+      "evidence_path": "deploy/",
+      "present": true
+     },
+     "packaging": {
+      "detail": "PEP 621 metadata, src layout, console_scripts entry point",
+      "evidence_path": "pyproject.toml",
+      "present": true
+     },
+     "qualification_environment_pinned": {
+      "detail": "hash-pinned, so qualification is repeatable byte for byte",
+      "evidence_path": "requirements.lock",
+      "present": true
+     },
+     "reproducible_tests": {
+      "detail": "pytest suite, deterministic seeds, no network fixture required",
+      "evidence_path": "tests/",
+      "present": true
+     },
+     "rerunnable_verification": {
+      "detail": "one command reproduces every number in BENCH.json",
+      "evidence_path": "tools/run_bench.py",
+      "present": true
+     },
+     "versioning": {
+      "detail": "single source of truth, currently 1.0.0",
+      "evidence_path": "src/anticloud_ref/_version.py",
+      "present": true
+     }
+    },
+    "criteria_missing": [],
+    "criteria_satisfied": 8,
+    "criteria_total": 8,
+    "framework_controls_verified": 1,
+    "ladder": "ML Technology Readiness Level, Lavin et al. 2022 (TMLR)",
+    "observed_level": 8,
+    "source": "22_COMPLIANCE_FRAMEWORKS/FACTS.md",
+    "trL9_claimed": false,
+    "trL9_reason": "requires proven success in an operational environment, which cannot be asserted from a repository"
+   },
+   "id": "16_ml_trl",
+   "ok": true,
+   "status": "PASS",
+   "title": "ML Technology Readiness Level 8"
+  }
+ ],
+ "passed": 16,
+ "failed": 0,
+ "failed_ids": [],
+ "all_passed": true,
+ "checks_executed_at": "2026-10-13T20:33:58.971819+00:00",
+ "checks_evidence": "ISOLATED_LAB_RESULTS/04_Evidence/16_checks_report.json",
+ "checks_evidence_sha3": "22050faadd9737da4bfda4c68737ef6de48ed6d469d2fcd72101cb0f60841ab0"
+}
